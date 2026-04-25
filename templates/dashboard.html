@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ bridge.name }} | Smart Bridge AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=asset_version) }}">
+</head>
+<body data-page="dashboard">
+    <div class="ambient-grid"></div>
+
+    <main
+        class="container dashboard-shell"
+        id="dashboardApp"
+        data-bridge-id="{{ bridge.id }}"
+        data-traffic-level="{{ bridge.traffic_level }}"
+        data-age="{{ bridge.age }}"
+    >
+        <section class="hero hero-dashboard">
+            <div class="hero-copy">
+                <a class="back-link" href="{{ url_for('index') }}">&#8592; Back to Bridge Catalog</a>
+                <p class="eyebrow">Digital Twin Monitoring Node</p>
+                <h1>{{ bridge.name }}</h1>
+                <p class="hero-text">
+                    {{ bridge.location }} | {{ bridge.bridge_type }} | Built in {{ bridge.built_year }}
+                </p>
+            </div>
+
+            <div class="hero-actions">
+                <div class="glass-card status-card">
+                    <span>AI Model</span>
+                    <strong>{{ model_name }}</strong>
+                    <p>Inference engine ready for live safety assessment</p>
+                </div>
+                <div class="glass-card status-card">
+                    <span>Monitoring Status</span>
+                    <strong id="systemStatusText">Standby</strong>
+                    <p id="systemStatusSubtext">Waiting for live sensor simulation or manual inputs</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="details-grid">
+            {% for metric in metrics %}
+            <article class="glass-card detail-card reveal-card">
+                <span>{{ metric.label }}</span>
+                <strong>{{ metric.value }}</strong>
+            </article>
+            {% endfor %}
+        </section>
+
+        <section class="main-grid">
+            <article class="glass-card panel-card reveal-card">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-label">Bridge Information</p>
+                        <h2>Asset Snapshot</h2>
+                    </div>
+                </div>
+
+                <div class="asset-overview">
+                    <div class="asset-line">
+                        <span>Location</span>
+                        <strong>{{ bridge.location }}</strong>
+                    </div>
+                    <div class="asset-line">
+                        <span>Bridge Type</span>
+                        <strong>{{ bridge.bridge_type }}</strong>
+                    </div>
+                    <div class="asset-line">
+                        <span>Length</span>
+                        <strong>{{ bridge.length }}</strong>
+                    </div>
+                    <div class="asset-line">
+                        <span>Traffic Profile</span>
+                        <strong>{{ bridge.traffic_level }}</strong>
+                    </div>
+                    <div class="asset-line">
+                        <span>Estimated Condition</span>
+                        <strong id="conditionText">{{ bridge.estimated_condition }}</strong>
+                    </div>
+                </div>
+            </article>
+
+            <article class="glass-card panel-card reveal-card">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-label">Live Sensor Simulation</p>
+                        <h2>Inspection Input Console</h2>
+                    </div>
+                    <button class="secondary-button" id="generateSensorData" type="button">
+                        Generate Live Sensor Data
+                    </button>
+                </div>
+
+                <form class="sensor-form" id="predictionForm">
+                    <input type="hidden" id="bridgeId" name="bridge_id" value="{{ bridge.id }}">
+
+                    <label for="load">Bridge Load (tons)</label>
+                    <input type="number" id="load" name="load" step="0.01" min="0" placeholder="Live traffic load" required>
+
+                    <label for="vibration">Vibration Level (mm/s)</label>
+                    <input type="number" id="vibration" name="vibration" step="0.01" min="0" placeholder="Structural vibration intensity" required>
+
+                    <label for="cracks">Crack Severity (0-10)</label>
+                    <input type="number" id="cracks" name="cracks" step="0.01" min="0" max="10" placeholder="Surface crack severity score" required>
+
+                    <label for="stress">Structural Stress (%)</label>
+                    <input type="number" id="stress" name="stress" step="0.01" min="0" max="100" placeholder="Material stress index" required>
+
+                    <div class="form-footer">
+                        <p id="lastGeneratedText">No live sensor packet generated yet.</p>
+                        <button class="primary-button" type="submit">Run AI Risk Prediction</button>
+                    </div>
+                </form>
+            </article>
+        </section>
+
+        <section class="result-grid">
+            <article class="glass-card result-panel reveal-card">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-label">AI Risk Result</p>
+                        <h2>Structural Safety Assessment</h2>
+                    </div>
+                    <span class="animated-badge neutral" id="predictionBadge">Awaiting Input</span>
+                </div>
+
+                <div class="result-core neutral" id="resultCore">
+                    <div class="result-main">
+                        <div class="result-icon" id="resultIcon">&#129302;</div>
+                        <div>
+                            <p class="result-label">Prediction</p>
+                            <h3 id="predictionText">No prediction yet</h3>
+                            <p class="result-description" id="predictionDescription">
+                                Generate live bridge telemetry or enter manual values to start analysis.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="risk-meter-block">
+                        <div class="meter-header">
+                            <span>Risk Meter</span>
+                            <strong id="riskMeterValue">0%</strong>
+                        </div>
+                        <div class="risk-meter-track">
+                            <div class="risk-meter-fill neutral" id="riskMeterFill"></div>
+                        </div>
+                    </div>
+
+                    <div class="result-stats">
+                        <div class="metric-box">
+                            <span>Confidence</span>
+                            <strong id="confidenceValue">0%</strong>
+                        </div>
+                        <div class="metric-box">
+                            <span>Bridge Age</span>
+                            <strong>{{ bridge.age }} years</strong>
+                        </div>
+                        <div class="metric-box">
+                            <span>System Status</span>
+                            <strong id="resultSystemStatus">Idle</strong>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="glass-card result-panel reveal-card">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-label">Operational Notes</p>
+                        <h2>Decision Support Summary</h2>
+                    </div>
+                </div>
+
+                <div class="operational-feed">
+                    <div class="feed-item">
+                        <span>Recommended Action</span>
+                        <strong id="recommendedAction">Run a prediction to receive system guidance.</strong>
+                    </div>
+                    <div class="feed-item">
+                        <span>Live Sensor Snapshot</span>
+                        <ul class="sensor-list" id="sensorSnapshotList">
+                            <li>Bridge Load: Pending</li>
+                            <li>Vibration Level: Pending</li>
+                            <li>Crack Severity: Pending</li>
+                            <li>Structural Stress: Pending</li>
+                        </ul>
+                    </div>
+                    <div class="feed-item">
+                        <span>Monitoring Timeline</span>
+                        <strong id="lastScanTime">No sensor scan completed yet.</strong>
+                    </div>
+                </div>
+
+                <div class="message-banner error hidden" id="formError"></div>
+            </article>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js', v=asset_version) }}"></script>
+</body>
+</html>

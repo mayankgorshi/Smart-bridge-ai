@@ -1,0 +1,254 @@
+[
+    {
+        "id": "howrah-bridge",
+        "name": "Howrah Bridge",
+        "location": "Kolkata, India",
+        "built_year": 1943,
+        "bridge_type": "Cantilever Bridge",
+        "length": "705 m",
+        "traffic_level": "Extreme"
+    },
+    {
+        "id": "bandra-worli-sea-link",
+        "name": "Bandra-Worli Sea Link",
+        "location": "Mumbai, India",
+        "built_year": 2009,
+        "bridge_type": "Cable-Stayed Bridge",
+        "length": "5.6 km",
+        "traffic_level": "Very High"
+    },
+    {
+        "id": "chenab-rail-bridge",
+        "name": "Chenab Rail Bridge",
+        "location": "Reasi, India",
+        "built_year": 2024,
+        "bridge_type": "Steel Arch Bridge",
+        "length": "1,315 m",
+        "traffic_level": "Medium"
+    },
+    {
+        "id": "mahatma-gandhi-setu",
+        "name": "Mahatma Gandhi Setu",
+        "location": "Patna, India",
+        "built_year": 1982,
+        "bridge_type": "Prestressed Concrete Bridge",
+        "length": "5.75 km",
+        "traffic_level": "Very High"
+    },
+    {
+        "id": "bogibeel-bridge",
+        "name": "Bogibeel Bridge",
+        "location": "Dibrugarh, India",
+        "built_year": 2018,
+        "bridge_type": "Truss Bridge",
+        "length": "4.94 km",
+        "traffic_level": "High"
+    },
+    {
+        "id": "vidyasagar-setu",
+        "name": "Vidyasagar Setu",
+        "location": "Kolkata, India",
+        "built_year": 1992,
+        "bridge_type": "Cable-Stayed Bridge",
+        "length": "823 m",
+        "traffic_level": "High"
+    },
+    {
+        "id": "atal-setu",
+        "name": "Atal Setu",
+        "location": "Mumbai, India",
+        "built_year": 2024,
+        "bridge_type": "Sea Bridge",
+        "length": "21.8 km",
+        "traffic_level": "Very High"
+    },
+    {
+        "id": "pamban-bridge",
+        "name": "Pamban Bridge",
+        "location": "Rameswaram, India",
+        "built_year": 1914,
+        "bridge_type": "Cantilever Bridge",
+        "length": "2.07 km",
+        "traffic_level": "Medium"
+    },
+    {
+        "id": "new-naini-bridge",
+        "name": "New Naini Bridge",
+        "location": "Prayagraj, India",
+        "built_year": 2004,
+        "bridge_type": "Cable-Stayed Bridge",
+        "length": "1.51 km",
+        "traffic_level": "Medium"
+    },
+    {
+        "id": "signature-bridge",
+        "name": "Signature Bridge",
+        "location": "Delhi, India",
+        "built_year": 2018,
+        "bridge_type": "Asymmetrical Cable-Stayed Bridge",
+        "length": "675 m",
+        "traffic_level": "High"
+    },
+    {
+        "id": "golden-gate-bridge",
+        "name": "Golden Gate Bridge",
+        "location": "San Francisco, USA",
+        "built_year": 1937,
+        "bridge_type": "Suspension Bridge",
+        "length": "2,737 m",
+        "traffic_level": "High"
+    },
+    {
+        "id": "brooklyn-bridge",
+        "name": "Brooklyn Bridge",
+        "location": "New York City, USA",
+        "built_year": 1883,
+        "bridge_type": "Hybrid Cable-Stayed Suspension Bridge",
+        "length": "1,825 m",
+        "traffic_level": "High"
+    },
+    {
+        "id": "sydney-harbour-bridge",
+        "name": "Sydney Harbour Bridge",
+        "location": "Sydney, Australia",
+        "built_year": 1932,
+        "bridge_type": "Through Arch Bridge",
+        "length": "1,149 m",
+        "traffic_level": "High"
+    },
+    {
+        "id": "millau-viaduct",
+        "name": "Millau Viaduct",
+        "location": "Millau, France",
+        "built_year": 2004,
+        "bridge_type": "Cable-Stayed Bridge",
+        "length": "2,460 m",
+        "traffic_level": "High"
+    },
+    {
+        "id": "akashi-kaikyo-bridge",
+        "name": "Akashi Kaikyo Bridge",
+        "location": "Kobe, Japan",
+        "built_year": 1998,
+        "bridge_type": "Suspension Bridge",
+        "length": "3,911 m",
+        "traffic_level": "Very High"
+    },
+    {
+        "id": "hangzhou-bay-bridge",
+        "name": "Hangzhou Bay Bridge",
+        "location": "Zhejiang, China",
+        "built_year": 2008,
+        "bridge_type": "Sea-Crossing Bridge",
+        "length": "35.7 km",
+        "traffic_level": "Very High"
+    },
+    {
+        "id": "tower-bridge",
+        "name": "Tower Bridge",
+        "location": "London, United Kingdom",
+        "built_year": 1894,
+        "bridge_type": "Bascule and Suspension Bridge",
+        "length": "244 m",
+        "traffic_level": "High"
+    },
+    {
+        "id": "george-washington-bridge",
+        "name": "George Washington Bridge",
+        "location": "New York City, USA",
+        "built_year": 1931,
+        "bridge_type": "Suspension Bridge",
+        "length": "1,451 m",
+        "traffic_level": "Extreme"
+    },
+    {
+        "id": "tokyo-gate-bridge",
+        "name": "Tokyo Gate Bridge",
+        "location": "Tokyo, Japan",
+        "built_year": 2012,
+        "bridge_type": "Truss Cantilever Bridge",
+        "length": "2,618 m",
+        "traffic_level": "High"
+    },
+    {
+        "id": "vasco-da-gama-bridge",
+        "name": "Vasco da Gama Bridge",
+        "location": "Lisbon, Portugal",
+        "built_year": 1998,
+        "bridge_type": "Cable-Stayed Viaduct",
+        "length": "12.3 km",
+        "traffic_level": "High"
+    },
+    {
+        "id": "confederation-bridge",
+        "name": "Confederation Bridge",
+        "location": "Prince Edward Island, Canada",
+        "built_year": 1997,
+        "bridge_type": "Box Girder Bridge",
+        "length": "12.9 km",
+        "traffic_level": "Medium"
+    },
+    {
+        "id": "bosphorus-bridge",
+        "name": "Bosphorus Bridge",
+        "location": "Istanbul, Turkey",
+        "built_year": 1973,
+        "bridge_type": "Suspension Bridge",
+        "length": "1,560 m",
+        "traffic_level": "Extreme"
+    },
+    {
+        "id": "oresund-bridge",
+        "name": "Oresund Bridge",
+        "location": "Copenhagen-Malmo, Denmark-Sweden",
+        "built_year": 2000,
+        "bridge_type": "Cable-Stayed Bridge",
+        "length": "7.85 km",
+        "traffic_level": "Very High"
+    },
+    {
+        "id": "forth-bridge",
+        "name": "Forth Bridge",
+        "location": "Scotland, United Kingdom",
+        "built_year": 1890,
+        "bridge_type": "Cantilever Railway Bridge",
+        "length": "2,529 m",
+        "traffic_level": "Medium"
+    },
+    {
+        "id": "duge-bridge",
+        "name": "Duge Bridge",
+        "location": "Guizhou, China",
+        "built_year": 2016,
+        "bridge_type": "Cable-Stayed Bridge",
+        "length": "1,341 m",
+        "traffic_level": "Medium"
+    },
+    {
+        "id": "helix-bridge",
+        "name": "Helix Bridge",
+        "location": "Singapore",
+        "built_year": 2010,
+        "bridge_type": "Pedestrian Truss Bridge",
+        "length": "280 m",
+        "traffic_level": "Medium"
+    },
+    {
+        "id": "sunshine-skyway-bridge",
+        "name": "Sunshine Skyway Bridge",
+        "location": "Tampa Bay, USA",
+        "built_year": 1987,
+        "bridge_type": "Cable-Stayed Bridge",
+        "length": "6.7 km",
+        "traffic_level": "High"
+    },
+    {
+        "id": "banpo-bridge",
+        "name": "Banpo Bridge",
+        "location": "Seoul, South Korea",
+        "built_year": 1982,
+        "bridge_type": "Girder Bridge",
+        "length": "1,495 m",
+        "traffic_level": "High"
+    }
+]
